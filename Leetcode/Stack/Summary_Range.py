@@ -1,5 +1,5 @@
 class Solution:
-    def summaryRanges(self, nums: List[int]) -> List[str]:
+    def summaryRanges(self, nums):
         result=[]
         res=[]
         for i in range(len(nums)):
