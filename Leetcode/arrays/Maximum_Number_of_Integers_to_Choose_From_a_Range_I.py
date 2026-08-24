@@ -1,0 +1,17 @@
+class Solution:
+    def maxCount(self, banned: List[int], n: int, maxSum: int) -> int:
+        count=0
+        total=0
+        banned=set(banned)
+        for i in range(1,n+1):
+            if i in banned:
+                continue
+            total+=i
+            if total>maxSum:
+                break
+            count+=1
+        return count
+
+
+            
+        
