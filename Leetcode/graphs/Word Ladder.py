@@ -15,15 +15,27 @@ class Solution:
                     if count>0:return False
                     count+=1
             return True
-
-        for i in range(len(words)):
-            for j in range(i+1,len(words)):
-                word1=words[i]
-                word2=words[j]
+        # O(n.n.l)=> too slow
+        # for i in range(len(words)):
+        #     for j in range(i+1,len(words)):
+        #         word1=words[i]
+        #         word2=words[j]
                 
-                if isConnected(word1,word2):
-                    adj[word2].append(word1)
-                    adj[word1].append(word2)
+        #         if isConnected(word1,word2):
+        #             adj[word2].append(word1)
+        #             adj[word1].append(word2)
+
+        # O(n.l.26)=>faster
+        for word in words:
+            for i in range(len(word)):
+                curr=word[i]
+                for char in "qwertyuiopasdfghjklzxcvbnm":
+                    if curr==char:
+                        continue
+                    next_word=word[:i]+char+word[i+1:]
+                    if next_word in wordList:
+                        adj[word].append(next_word)
+        
         #shortest path for bfs
         queue=deque()
         visited=set()
