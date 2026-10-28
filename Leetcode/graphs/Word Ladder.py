@@ -8,13 +8,13 @@ class Solution:
         wordList.add(beginWord)
         words=list(wordList)
         
-        def isConnected(word1,word2):
-            count=0
-            for i in range(len(word1)):
-                if word1[i]!=word2[i]:
-                    if count>0:return False
-                    count+=1
-            return True
+        # def isConnected(word1,word2):
+        #     count=0
+        #     for i in range(len(word1)):
+        #         if word1[i]!=word2[i]:
+        #             if count>0:return False
+        #             count+=1
+        #     return True
         # O(n.n.l)=> too slow
         # for i in range(len(words)):
         #     for j in range(i+1,len(words)):
