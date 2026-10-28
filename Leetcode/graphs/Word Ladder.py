@@ -5,7 +5,6 @@ class Solution:
         if endWord not in wordList:
             return 0
         adj=defaultdict(list)
-        adj[beginWord]=[]
         wordList.add(beginWord)
         words=list(wordList)
         
